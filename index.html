@@ -1,304 +1,384 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio</title>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aparna Ashtankar - Innovative Fashion Technologist</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        p, li {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 1.2rem;
+            font-weight: normal;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Sections */
+        section {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #3498db;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: #fff;
+            border: 4px solid #3498db;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #fff;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #fff;
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #fff;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #fff transparent transparent;
+        }
+
+        .right::after {
+            left: -16px;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 15px;
+        }
+
+        /* Contact Form */
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: #ecf0f1;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+        }
+    </style>
 </head>
-
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>
-    <!-- End #mobile-menu-toggle -->
     <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
+        <h1>Aparna Ashtankar</h1>
+        <h2>Innovative Fashion Technologist | MBA Candidate</h2>
     </header>
-    <!-- End header -->
 
-    <div id="lead">
-        <div id="lead-content">
-            <h1>Aparna Ashtankar</h1>
-            <h2>Blending Fashion Innovation with Business Acumen</h2>
-            <a href="#" class="btn-rounded-white">Download Resume</a>
-        </div>
-        <!-- End #lead-content -->
-
-        <div id="lead-overlay"></div>
-
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
-    </div>
-    <!-- End #lead -->
-
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="heading">About Me</h2>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                        Dynamic Fashion Technology professional pursuing an MBA, specializing in e-commerce optimization and sustainable supply chain innovation. Proven track record of increasing online conversion rates by 20% and improving operational efficiency by 15% through AI-powered, data-driven strategies. Skilled in leveraging advanced analytics, digital marketing, and product development to streamline apparel production processes and drive business growth. Passionate about leading cross-functional teams to implement cutting-edge solutions that enhance sustainability and efficiency in fashion retail. Poised to apply a unique blend of fashion tech expertise, business analytics, and leadership skills to spearhead transformative initiatives in the global fashion industry.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End #about -->
-
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-            <div data-date="January 2023 – June 2023">
-                <h3>Raymond Pvt. Ltd.</h3>
-                <h4>Merchandising and Product Development Intern</h4>
-                <p>
-                Situation: Raymond Apparel Ltd. was looking to expand its product line by introducing an athleisure wear range for Park Avenue.
-Task: As a Merchandising/Product Development Intern, I was tasked with assisting in the creation and launch of the new athleisure apparel line, including market research, material sourcing, and cost analysis.
-Action: I spearheaded the creation of athleisure apparel by:
-
-Coordinating with vendors to source materials
-Developing detailed cost sheets
-Conducting market perception surveys
-Creating and presenting final designs and reports
-
-Result: My efforts contributed to a successful market entry for the new athleisure line. Specifically, there was a 15% reduction in errors during the development process, and I helped optimize the end-to-end supply chain and operations for the new product line.
-                </p>
-            </div>
-
-            <div data-date="June 2022 – August 2022">
-                <h3>Shahi Exports Pt. Ltd.</h3>
-                <h4>Industrial Engineering and Production Engineering Intern</h4>
-                <p>
-                    Situation: Shahi Exports Pvt. Ltd needed to improve efficiency in their cutting, spreading, and sewing departments.
-Task: As a Production Engineering/Operation Management Intern, I was assigned to map and optimize workflows in these departments to reduce cycle time and improve operational efficiency.
-Action: I implemented the following strategies:
-
-Conducted value stream mapping for the cutting-spreading and sewing departments
-Collaborated with inspection teams to ensure quality control
-Supervised 200 workers to implement new processes
-Applied lean manufacturing principles to identify areas for improvement
-
-Result: My efforts resulted in a 12% reduction in cycle time and a notable improvement in operational efficiency. Additionally, there was a 15% increase in overall efficiency in the targeted departments.
-                </p>
-            </div>
-
-            <div data-date="August 2021 – September 2021">
-                <h3>Usha Yarns Pvt. Ltd</h3>
-                <h4>Textile Intern</h4>
-                <p>
-                    Situation: Usha Yarns Pvt. Ltd was looking to improve its process of converting fabrics into recycled yarns and enhance supply chain efficiency.
-Task: As a Textile Intern, I was tasked with analyzing the conversion process of fabrics into recycled yarns, focusing on identifying potential supply chain improvements.
-Action: To address this task, I:
-
-Analyzed the entire conversion process from fabrics to recycled yarns
-Conducted in-depth research on regenerate and melange yarns
-Identified efficiency gaps in the current process
-Developed recommendations for process enhancements
-
-Result: My analysis and recommendations led to process improvements that boosted processing efficiency by 10%. These recommendations were incorporated into the company's procedures, contributing to long-term efficiency gains in their recycled yarn production process.
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- End #experience -->
-
-    <div id="education">
-        <h2 class="heading">Education</h2>
-        <div class="education-block">
-            <h3>New York Institute of Technology</h3>
-            <span class="education-date">January 2024 - December 2025</span>
-            <h4>Master of Business Administration</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-            </p>
-        </div>
-        <!-- End .education-block -->
-
-        <div class="education-block">
-            <h3>National Institute of Fashion Technology</h3>
-            <span class="education-date">August 2019 - May 2023</span>
-            <h4>Bachelor of Fashion Technology (Apparel Production)</h4>
-            <ul>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-            </ul>
-        </div>
-        <!-- End .education-block -->
-    </div>
-    <!-- End #education -->
-
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Projects</h2>
-        <div class="container">
-            <div class="row">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-            </div>
-        </div>
-    </div>
-    <!-- End #projects -->
-
-    <div id="skills">
-        <h2 class="heading">Skills</h2>
+    <nav>
         <ul>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Ruby</li>
-            <li>Go</li>
-            <li>Node.js</li>
-            <li>AngularJs</li>
-            <li>React</li>
-            <li>Elixir</li>
-            <li>Java</li>
-            <li>C</li>
-            <li>C#</li>
-            <li>C++</li>
-            <li>Ruby on Rails</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Ruby</li>
-            <li>Go</li>
-            <li>Node.js</li>
-            <li>AngularJs</li>
-            <li>React</li>
-            <li>Elixir</li>
-            <li>Java</li>
-            <li>C</li>
-            <li>C#</li>
-            <li>C++</li>
-            <li>Ruby on Rails</li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-    </div>
-    <!-- End #skills -->
+    </nav>
 
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/email@email.com">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Dynamic Fashion Technology professional pursuing an MBA, specializing in e-commerce optimization and sustainable supply chain innovation. Proven track record of increasing online conversion rates by 20% and improving operational efficiency by 15% through AI-powered, data-driven strategies. Skilled in leveraging advanced analytics, digital marketing, and product development to streamline apparel production processes and drive business growth. Passionate about leading cross-functional teams to implement cutting-edge solutions that enhance sustainability and efficiency in fashion retail. Poised to apply a unique blend of fashion tech expertise, business analytics, and leadership skills to spearhead transformative initiatives in the global fashion industry.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <h3>Raymond Pvt. Ltd.</h3>
+                    <h4>Merchandising and Product Development Intern</h4>
+                    <p>January 2023 – June 2023</p>
+                    <p>Led the creation of an athleisure apparel line for Park Avenue, resulting in a successful market entry and 15% reduction in development process errors. Optimized end-to-end supply chain and operations for the new product line.</p>
+                </div>
+                <div class="timeline-item right">
+                    <h3>Shahi Exports Pt. Ltd.</h3>
+                    <h4>Industrial Engineering and Production Engineering Intern</h4>
+                    <p>June 2022 – August 2022</p>
+                    <p>Implemented lean manufacturing principles to optimize workflows in cutting, spreading, and sewing departments. Achieved a 12% reduction in cycle time and 15% increase in overall efficiency.</p>
+                </div>
+                <div class="timeline-item left">
+                    <h3>Usha Yarns Pvt. Ltd</h3>
+                    <h4>Textile Intern</h4>
+                    <p>August 2021 – September 2021</p>
+                    <p>Analyzed and improved the conversion process of fabrics into recycled yarns, resulting in a 10% boost in processing efficiency. Recommendations were incorporated into long-term company procedures.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <h3>New York Institute of Technology</h3>
+            <p>Master of Business Administration</p>
+            <p>January 2024 - December 2025</p>
+
+            <h3>National Institute of Fashion Technology</h3>
+            <p>Bachelor of Fashion Technology (Apparel Production)</p>
+            <p>August 2019 - May 2023</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Project 1">
+                    <div class="project-info">
+                        <h3>E-commerce Optimization</h3>
+                        <p>Implemented AI-driven personalization strategies, resulting in a 20% increase in online conversion rates for a major fashion retailer.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/api/placeholder/400/320" alt="Project 2">
+                    <div class="project-info">
+                        <h3>Sustainable Supply Chain</h3>
+                        <p>Developed a blockchain-based tracking system for ethical sourcing, improving supply chain transparency by 40%.</p>
+                    </div>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill-item">Fashion Technology</span>
+                <span class="skill-item">E-commerce Optimization</span>
+                <span class="skill-item">Supply Chain Management</span>
+                <span class="skill-item">Data Analytics</span>
+                <span class="skill-item">Product Development</span>
+                <span class="skill-item">Sustainable Fashion</span>
+                <span class="skill-item">Lean Manufacturing</span>
+                <span class="skill-item">Digital Marketing</span>
+                <span class="skill-item">Project Management</span>
+                <span class="skill-item">AI in Fashion</span>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <form action="https://formspree.io/your-email@example.com" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
             </form>
-        </div>
-        <!-- End #contact-form -->
+        </section>
     </div>
-    <!-- End #contact -->
 
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                        Copyright &copy; <span id="current-year">2022</span> YOUR NAME
-                    </p>
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <p>&copy; 2024 Aparna Ashtankar. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
         </div>
     </footer>
-    <!-- End footer -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
