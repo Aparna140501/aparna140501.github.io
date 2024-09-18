@@ -3,379 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aparna Ashtankar - Innovative Fashion Technologist</title>
+    <title>Aparna Ashtankar - Fashion Technology Innovator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
         }
-
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #2c3e50;
+        .gradient-text {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-
-        p, li {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        /* Layout */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header */
-        header {
-            background-color: #34495e;
-            color: #ecf0f1;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        header h2 {
-            font-size: 1.2rem;
-            font-weight: normal;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: #2c3e50;
-            padding: 1rem 0;
-        }
-
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #ecf0f1;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #3498db;
-        }
-
-        /* Sections */
-        section {
-            background-color: #fff;
-            margin: 20px 0;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Experience Timeline */
-        .timeline {
+        .section-title {
             position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: inline-block;
         }
-
-        .timeline::after {
+        .section-title::after {
             content: '';
             position: absolute;
-            width: 6px;
-            background-color: #3498db;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
+            bottom: -5px;
+            left: 0;
             width: 50%;
+            height: 3px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
         }
-
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #4ecdc4;
+        }
         .timeline-item::after {
             content: '';
             position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: #fff;
-            border: 4px solid #3498db;
+            left: 7px;
             top: 15px;
-            border-radius: 50%;
-            z-index: 1;
+            width: 2px;
+            height: calc(100% + 15px);
+            background: #4ecdc4;
         }
-
-        .left {
-            left: 0;
-        }
-
-        .right {
-            left: 50%;
-        }
-
-        .left::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            right: 30px;
-            border: medium solid #fff;
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent #fff;
-        }
-
-        .right::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            left: 30px;
-            border: medium solid #fff;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent #fff transparent transparent;
-        }
-
-        .right::after {
-            left: -16px;
-        }
-
-        /* Skills */
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
         .skill-item {
-            background-color: #3498db;
-            color: #fff;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
+            transition: all 0.3s ease;
         }
-
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background-color: #ecf0f1;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
+        .skill-item:hover {
             transform: translateY(-5px);
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-info {
-            padding: 15px;
-        }
-
-        /* Contact Form */
-        form {
-            display: grid;
-            gap: 15px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #3498db;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #34495e;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-
-        .social-links {
-            margin-top: 15px;
-        }
-
-        .social-links a {
-            color: #ecf0f1;
-            font-size: 24px;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #3498db;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Aparna Ashtankar</h1>
-        <h2>Innovative Fashion Technologist | MBA Candidate</h2>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-semibold gradient-text">AA</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="hover:text-teal-500 transition duration-300">About</a>
+                    <a href="#experience" class="hover:text-teal-500 transition duration-300">Experience</a>
+                    <a href="#education" class="hover:text-teal-500 transition duration-300">Education</a>
+                    <a href="#skills" class="hover:text-teal-500 transition duration-300">Skills</a>
+                    <a href="#projects" class="hover:text-teal-500 transition duration-300">Projects</a>
+                    <a href="#contact" class="hover:text-teal-500 transition duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Dynamic Fashion Technology professional pursuing an MBA, specializing in e-commerce optimization and sustainable supply chain innovation. Proven track record of increasing online conversion rates by 20% and improving operational efficiency by 15% through AI-powered, data-driven strategies. Skilled in leveraging advanced analytics, digital marketing, and product development to streamline apparel production processes and drive business growth. Passionate about leading cross-functional teams to implement cutting-edge solutions that enhance sustainability and efficiency in fashion retail. Poised to apply a unique blend of fashion tech expertise, business analytics, and leadership skills to spearhead transformative initiatives in the global fashion industry.</p>
+    <main class="container mx-auto px-6 py-8">
+        <section id="hero" class="text-center py-20">
+            <h1 class="text-5xl font-bold mb-4 gradient-text">Aparna Ashtankar</h1>
+            <p class="text-xl text-gray-600">Fashion Technology Innovator | MBA Candidate</p>
         </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <h3>Raymond Pvt. Ltd.</h3>
-                    <h4>Merchandising and Product Development Intern</h4>
-                    <p>January 2023 – June 2023</p>
-                    <p>Led the creation of an athleisure apparel line for Park Avenue, resulting in a successful market entry and 15% reduction in development process errors. Optimized end-to-end supply chain and operations for the new product line.</p>
+        <section id="about" class="mb-20">
+            <h2 class="text-3xl font-semibold mb-6 section-title">About Me</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Dynamic Fashion Technology professional pursuing an MBA, specializing in e-commerce optimization and sustainable supply chain innovation. Proven track record of increasing online conversion rates by 20% and improving operational efficiency by 15% through AI-powered, data-driven strategies. Skilled in leveraging advanced analytics, digital marketing, and product development to streamline apparel production processes and drive business growth.
+            </p>
+        </section>
+
+        <section id="experience" class="mb-20">
+            <h2 class="text-3xl font-semibold mb-6 section-title">Experience</h2>
+            <div class="space-y-6">
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold">Merchandising and Product Development Intern</h3>
+                    <p class="text-gray-600">Raymond Pvt. Ltd. | January 2023 – June 2023</p>
+                    <p class="mt-2 text-gray-700">Led the creation of an athleisure apparel line for Park Avenue, resulting in a successful market entry and 15% reduction in development process errors. Optimized end-to-end supply chain and operations for the new product line.</p>
                 </div>
-                <div class="timeline-item right">
-                    <h3>Shahi Exports Pt. Ltd.</h3>
-                    <h4>Industrial Engineering and Production Engineering Intern</h4>
-                    <p>June 2022 – August 2022</p>
-                    <p>Implemented lean manufacturing principles to optimize workflows in cutting, spreading, and sewing departments. Achieved a 12% reduction in cycle time and 15% increase in overall efficiency.</p>
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold">Industrial Engineering and Production Engineering Intern</h3>
+                    <p class="text-gray-600">Shahi Exports Pt. Ltd | June 2022 – August 2022</p>
+                    <p class="mt-2 text-gray-700">Implemented lean manufacturing principles to optimize workflows in cutting, spreading, and sewing departments. Achieved a 12% reduction in cycle time and 15% increase in overall efficiency.</p>
                 </div>
-                <div class="timeline-item left">
-                    <h3>Usha Yarns Pvt. Ltd</h3>
-                    <h4>Textile Intern</h4>
-                    <p>August 2021 – September 2021</p>
-                    <p>Analyzed and improved the conversion process of fabrics into recycled yarns, resulting in a 10% boost in processing efficiency. Recommendations were incorporated into long-term company procedures.</p>
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold">Textile Intern</h3>
+                    <p class="text-gray-600">Usha Yarns Pvt. Ltd | August 2021 – September 2021</p>
+                    <p class="mt-2 text-gray-700">Analyzed and improved the conversion process of fabrics into recycled yarns, resulting in a 10% boost in processing efficiency. Recommendations were incorporated into long-term company procedures.</p>
                 </div>
             </div>
         </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <h3>New York Institute of Technology</h3>
-            <p>Master of Business Administration</p>
-            <p>January 2024 - December 2025</p>
-
-            <h3>National Institute of Fashion Technology</h3>
-            <p>Bachelor of Fashion Technology (Apparel Production)</p>
-            <p>August 2019 - May 2023</p>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="/api/placeholder/400/320" alt="Project 1">
-                    <div class="project-info">
-                        <h3>E-commerce Optimization</h3>
-                        <p>Implemented AI-driven personalization strategies, resulting in a 20% increase in online conversion rates for a major fashion retailer.</p>
-                    </div>
+        <section id="education" class="mb-20">
+            <h2 class="text-3xl font-semibold mb-6 section-title">Education</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold">Master of Business Administration</h3>
+                    <p class="text-gray-600">New York Institute of Technology | January 2024 - December 2025</p>
+                    <p class="mt-2 text-gray-700">Relevant Coursework: Supply Chain Management, Business Analytics, Financial Analysis, Marketing Management</p>
                 </div>
-                <div class="project-card">
-                    <img src="/api/placeholder/400/320" alt="Project 2">
-                    <div class="project-info">
-                        <h3>Sustainable Supply Chain</h3>
-                        <p>Developed a blockchain-based tracking system for ethical sourcing, improving supply chain transparency by 40%.</p>
-                    </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Bachelor of Fashion Technology (Apparel Production)</h3>
+                    <p class="text-gray-600">National Institute of Fashion Technology | August 2019 - May 2023</p>
+                    <p class="mt-2 text-gray-700">Relevant Coursework: Textile Science, Apparel Production, Fashion Marketing, Quality Control</p>
                 </div>
-                <!-- Add more project cards as needed -->
             </div>
         </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <span class="skill-item">Fashion Technology</span>
-                <span class="skill-item">E-commerce Optimization</span>
-                <span class="skill-item">Supply Chain Management</span>
-                <span class="skill-item">Data Analytics</span>
-                <span class="skill-item">Product Development</span>
-                <span class="skill-item">Sustainable Fashion</span>
-                <span class="skill-item">Lean Manufacturing</span>
-                <span class="skill-item">Digital Marketing</span>
-                <span class="skill-item">Project Management</span>
-                <span class="skill-item">AI in Fashion</span>
+        <section id="skills" class="mb-20">
+            <h2 class="text-3xl font-semibold mb-6 section-title">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">Fashion Technology</div>
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">E-commerce Optimization</div>
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">Supply Chain Management</div>
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">Data Analytics</div>
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">Product Development</div>
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">Sustainable Fashion</div>
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">Lean Manufacturing</div>
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">Digital Marketing</div>
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">Project Management</div>
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">AI in Fashion</div>
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">Python</div>
+                <div class="skill-item bg-white p-4 rounded-lg shadow-md text-center">Tableau</div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <form action="https://formspree.io/your-email@example.com" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
+        <section id="projects" class="mb-20">
+            <h2 class="text-3xl font-semibold mb-6 section-title">Projects</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">E-commerce Optimization</h3>
+                    <p class="text-gray-700">Implemented AI-driven personalization strategies, resulting in a 20% increase in online conversion rates for a major fashion retailer.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Sustainable Supply Chain</h3>
+                    <p class="text-gray-700">Developed a blockchain-based tracking system for ethical sourcing, improving supply chain transparency by 40%.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-20">
+            <h2 class="text-3xl font-semibold mb-6 section-title">Get in Touch</h2>
+            <form class="bg-white p-6 rounded-lg shadow-md">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" required></textarea>
+                </div>
+                <button type="submit" class="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 transition duration-300">Send Message</button>
             </form>
         </section>
-    </div>
+    </main>
 
-    <footer>
-        <p>&copy; 2024 Aparna Ashtankar. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a href="#" target="_blank"><i class="fa fa-github"></i></a>
-            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Aparna Ashtankar. All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="hover:text-teal-400 transition duration-300"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-teal-400 transition duration-300"><i class="fab fa-github"></i></a>
+                <a href="#" class="hover:text-teal-400 transition duration-300"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
     </footer>
 
