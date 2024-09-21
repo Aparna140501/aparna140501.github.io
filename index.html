@@ -24,6 +24,38 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -42,6 +74,7 @@
                 <li><a href="#skills" class="hover:text-blue-800 transition duration-300">Skills</a></li>
                 <li><a href="#experience" class="hover:text-blue-800 transition duration-300">Experience</a></li>
                 <li><a href="#projects" class="hover:text-blue-800 transition duration-300">Projects</a></li>
+                <li><a href="#personal-projects" class="hover:text-blue-800 transition duration-300">Personal Projects</a></li>
                 <li><a href="#volunteering" class="hover:text-blue-800 transition duration-300">Volunteering</a></li>
                 <li><a href="#contact" class="hover:text-blue-800 transition duration-300">Contact</a></li>
             </ul>
@@ -49,11 +82,13 @@
     </nav>
 
     <main class="container mx-auto mt-12 p-4">
+        <!-- About section -->
         <section id="about" class="mb-16 section-fade">
             <h2 class="text-4xl font-bold mb-6 text-center">About Me</h2>
             <p class="text-lg text-center max-w-3xl mx-auto">Passionate MBA candidate with a strong foundation in Fashion Technology, specializing in product development, supply chain management, and e-commerce strategies. I leverage data analytics and lean manufacturing principles to drive efficiency and innovation in the fashion industry, blending creative design with strategic business acumen.</p>
         </section>
 
+        <!-- Education section -->
         <section id="education" class="mb-16 section-fade">
             <h2 class="text-4xl font-bold mb-6 text-center">Education</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -72,6 +107,7 @@
             </div>
         </section>
 
+        <!-- Skills section -->
         <section id="skills" class="mb-16 section-fade">
             <h2 class="text-4xl font-bold mb-6 text-center">Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -137,6 +173,7 @@
             </div>
         </section>
 
+        <!-- Experience section -->
         <section id="experience" class="mb-16 section-fade">
             <h2 class="text-4xl font-bold mb-6 text-center">Professional Experience</h2>
             <div class="space-y-8">
@@ -177,6 +214,7 @@
             </div>
         </section>
 
+        <!-- Projects section -->
         <section id="projects" class="mb-16 section-fade">
             <h2 class="text-4xl font-bold mb-6 text-center">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -201,74 +239,70 @@
                     </ul>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Lean Manufacturing Implementation in an Export House</h3>
-                    <p class="italic mb-4">Tools: Value Stream Mapping, 5S, and Gemba</p>
+                   <h3 class="text-2xl font-semibold mb-2 text-blue-600">Lean Manufacturing Implementation</h3>
+                    <p class="italic mb-4">Tools: Value Stream Mapping, Kaizen, 5S</p>
                     <ul class="list-disc list-inside space-y-2">
-                        <li>Developed a lean manufacturing strategy for an apparel production facility</li>
-                        <li>Identified process optimization opportunities and waste reduction areas</li>
-                        <li>Implemented 5S methodology to improve workplace organization</li>
-                        <li>Conducted Gemba walks to gain shop floor insights and drive continuous improvement</li>
+                        <li>Implemented lean manufacturing principles in a garment production facility</li>
+                        <li>Conducted value stream mapping to identify and eliminate waste</li>
+                        <li>Applied 5S methodology to improve workplace organization</li>
+                        <li>Resulted in 15% reduction in production time and 10% increase in quality</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Sustainable Supply Chain Optimization</h3>
+                    <p class="italic mb-4">Tools: Excel, Python, Supply Chain Modeling Software</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Developed a model for sustainable supply chain management in fashion industry</li>
+                        <li>Analyzed carbon footprint and identified areas for sustainability improvement</li>
+                        <li>Proposed strategies to reduce environmental impact while maintaining efficiency</li>
+                        <li>Presented findings at a sustainability conference</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- Personal Projects section -->
         <section id="personal-projects" class="mb-16 section-fade">
             <h2 class="text-4xl font-bold mb-6 text-center">Personal Projects</h2>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-semibold mb-4 text-blue-600">Project Documentation</h3>
-                <p class="mb-4">Upload and view documentation for your personal projects here:</p>
-                <input type="file" class="mb-4 p-2 border rounded" accept=".pdf,.doc,.docx">
-               <div id="project-list" class="space-y-4">
-                    <!-- Project items will be dynamically added here -->
-                </div>
-            </div>
-        </section>
-
-        <section id="volunteering" class="mb-16 section-fade">
-            <h2 class="text-4xl font-bold mb-6 text-center">Volunteering & Leadership</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Fashion Society President</h3>
-                    <p class="italic mb-4">National Institute of Fashion Technology, Kannur</p>
-                    <ul class="list-disc list-inside space-y-2">
-                        <li>Led a team of 50+ members in organizing fashion shows and events</li>
-                        <li>Coordinated with industry professionals for workshops and seminars</li>
-                        <li>Managed budgets and sponsorships for various activities</li>
-                    </ul>
+                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Sustainable Fashion Blog</h3>
+                    <p class="mb-4">Authored a blog focused on sustainable fashion practices and circular economy principles in the textile industry.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Environmental Sustainability Ambassador</h3>
-                    <p class="italic mb-4">Local Community Initiative</p>
-                    <ul class="list-disc list-inside space-y-2">
-                        <li>Organized awareness campaigns on sustainable fashion practices</li>
-                        <li>Conducted workshops on upcycling and eco-friendly textile production</li>
-                        <li>Collaborated with local artisans to promote traditional, sustainable techniques</li>
-                    </ul>
+                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Upcycled Fashion Collection</h3>
+                    <p class="mb-4">Created a small collection of upcycled garments using post-consumer textile waste, showcasing creative design and sustainability.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Volunteering section -->
+        <section id="volunteering" class="mb-16 section-fade">
+            <h2 class="text-4xl font-bold mb-6 text-center">Volunteering</h2>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold mb-2 text-blue-600">Fashion Revolution India</h3>
+                <p class="italic mb-4">Volunteer, 2021 - Present</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Participate in campaigns promoting transparency in the fashion supply chain</li>
+                    <li>Organize workshops on sustainable fashion practices for local communities</li>
+                    <li>Contribute to social media content creation on ethical fashion topics</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact section -->
         <section id="contact" class="mb-16 section-fade">
             <h2 class="text-4xl font-bold mb-6 text-center">Contact Me</h2>
-            <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
-                <form id="contact-form" class="space-y-4">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                        <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">Send Message</button>
-                    </div>
-                </form>
+            <div class="flex justify-center space-x-6">
+                <a href="mailto:aparna.ashtankar@example.com" class="text-blue-600 hover:text-blue-800 transition duration-300">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/aparna-ashtankar" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 transition duration-300">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="https://github.com/aparna-ashtankar" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 transition duration-300">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
             </div>
         </section>
     </main>
@@ -276,16 +310,18 @@
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 Aparna Ranjan Ashtankar. All rights reserved.</p>
-            <div class="mt-4 space-x-4">
-                <a href="#" class="text-white hover:text-blue-400 transition duration-300"><i class="fab fa-linkedin fa-2x"></i></a>
-                <a href="#" class="text-white hover:text-blue-400 transition duration-300"><i class="fab fa-github fa-2x"></i></a>
-                <a href="#" class="text-white hover:text-blue-400 transition duration-300"><i class="far fa-envelope fa-2x"></i></a>
-            </div>
         </div>
     </footer>
 
+    <!-- Modal for project images -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <script>
-        // Intersection Observer for fade-in effect
+        // Intersection Observer for fading in sections
+        const sections = document.querySelectorAll('.section-fade');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -294,37 +330,11 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.section-fade').forEach(section => {
+        sections.forEach(section => {
             observer.observe(section);
         });
 
-        // Project upload and display functionality
-        const fileInput = document.querySelector('input[type="file"]');
-        const projectList = document.getElementById('project-list');
-
-        fileInput.addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            if (file) {
-                const projectItem = document.createElement('div');
-                projectItem.className = 'flex items-center justify-between bg-gray-100 p-4 rounded';
-                projectItem.innerHTML = `
-                    <span>${file.name}</span>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">View</button>
-                `;
-                projectList.appendChild(projectItem);
-            }
-        });
-
-        // Contact form submission
-        const contactForm = document.getElementById('contact-form');
-        contactForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            // Here you would typically send the form data to a server
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        });
-
-        // Smooth scrolling for navigation
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -332,6 +342,39 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const span = document.getElementsByClassName("close")[0];
+
+        // Function to open modal
+        function openModal(imgSrc) {
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+
+        // Close modal when clicking (x)
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Anime.js animation for header
+        anime({
+            targets: 'header h1, header p',
+            translateY: [50, 0],
+            opacity: [0, 1],
+            easing: 'easeOutExpo',
+            duration: 1500,
+            delay: anime.stagger(200)
         });
     </script>
 </body>
