@@ -1,363 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aparna Ashtankar - Fashion Technology Innovator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Aparna Ranjan Ashtankar - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        header {
-            background: #222;
-            color: #fff;
-            padding: 15px 30px;
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .brand {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
         }
-
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
+        .gradient-bg {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
         }
-
-        nav {
-            display: flex;
-            gap: 20px;
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 100%;
-            height: 2px;
-            background: #ff6f61;
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        nav a:hover::after {
-            transform: scaleX(1);
-        }
-
-        .menu {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 0;
-            background: #222;
-            color: #fff;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            width: 200px;
-        }
-
-        .menu a {
-            display: block;
-            padding: 10px 0;
-        }
-
-        .menu.active {
-            display: block;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 0;
-        }
-
-        .section {
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .section h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            color: #222;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .section h2::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 50px;
-            height: 4px;
-            background: #ff6f61;
-        }
-
-        .project-card,
-        .experience-card {
-            background: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover,
-        .experience-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button {
-            background: #ff6f61;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #ff4b3e;
-        }
-
-        footer {
-            background: #222;
-            color: #fff;
-            padding: 30px;
-            text-align: center;
-        }
-
-        footer a {
-            color: #ff6f61;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .menu-icon {
-                display: block;
-            }
-
-            nav {
-                display: none;
-            }
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-
-<body>
-    <header>
-        <div class="brand">Aparna Ashtankar</div>
-        <div class="menu-icon" id="menu-icon">
-            ☰
+<body class="bg-gray-50 text-gray-800">
+    <header class="gradient-bg text-white p-8 shadow-lg">
+        <div class="container mx-auto">
+            <h1 class="text-5xl font-bold mb-2">Aparna Ranjan Ashtankar</h1>
+            <p class="text-xl">MBA Candidate | Fashion Technologist | Product Development & Supply Chain Specialist</p>
         </div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
     </header>
 
-    <div class="menu" id="mobile-menu">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-10">
+        <div class="container mx-auto">
+            <ul class="flex flex-wrap justify-center space-x-6 text-blue-600">
+                <li><a href="#about" class="hover:text-blue-800 transition duration-300">About</a></li>
+                <li><a href="#education" class="hover:text-blue-800 transition duration-300">Education</a></li>
+                <li><a href="#skills" class="hover:text-blue-800 transition duration-300">Skills</a></li>
+                <li><a href="#experience" class="hover:text-blue-800 transition duration-300">Experience</a></li>
+                <li><a href="#projects" class="hover:text-blue-800 transition duration-300">Projects</a></li>
+                <li><a href="#volunteering" class="hover:text-blue-800 transition duration-300">Volunteering</a></li>
+                <li><a href="#contact" class="hover:text-blue-800 transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <main class="container">
-        <!-- Hero Section -->
-        <section id="hero" class="section text-center">
-            <h1 style="font-family: 'Poppins', sans-serif; font-size: 3rem; color: #222;">Aparna Ashtankar</h1>
-            <p style="font-size: 1.5rem; color: #666;">Fashion Technology Innovator | MBA Candidate</p>
+    <main class="container mx-auto mt-12 p-4">
+        <section id="about" class="mb-16 section-fade">
+            <h2 class="text-4xl font-bold mb-6 text-center">About Me</h2>
+            <p class="text-lg text-center max-w-3xl mx-auto">Passionate MBA candidate with a strong foundation in Fashion Technology, specializing in product development, supply chain management, and e-commerce strategies. I leverage data analytics and lean manufacturing principles to drive efficiency and innovation in the fashion industry, blending creative design with strategic business acumen.</p>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>
-                I am a dedicated Fashion Technology professional and an MBA candidate, specializing in combining fashion and technology to drive innovation. My expertise includes sustainable supply chain solutions, e-commerce optimization, and advanced data analytics.
-            </p>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h2>Experience</h2>
-            <div class="experience-card">
-                <h3>Merchandising Intern</h3>
-                <p>Raymond Pvt. Ltd. | Jan 2023 – Jun 2023</p>
-                <p>Contributed to the development of an athleisure line, enhancing production efficiency and reducing errors by 15%.</p>
-            </div>
-            <div class="experience-card">
-                <h3>Industrial Engineering Intern</h3>
-                <p>Shahi Exports Pvt. Ltd. | Jun 2022 – Aug 2022</p>
-                <p>Implemented lean manufacturing principles, reducing cycle time by 12% and increasing efficiency by 15%.</p>
-            </div>
-            <div class="experience-card">
-                <h3>Textile Intern</h3>
-                <p>Usha Yarns Pvt. Ltd. | Aug 2021 – Sep 2021</p>
-                <p>Improved fabric conversion processes, boosting efficiency by 10%.</p>
-            </div>
-            <div class="experience-card">
-                <h3>Volunteer - Food Donation Drive</h3>
-                <p>Old Age Home | Jul 2022</p>
-                <p>Coordinated a food donation drive for 100+ elderly individuals, leading a team of volunteers.</p>
-            </div>
-            <div class="experience-card">
-                <h3>Volunteer - Cloth & Book Donation Drive</h3>
-                <p>Orphanage | Mar 2022</p>
-                <p>Organized donations of clothing and books for underprivileged children, collecting 200+ items.</p>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-
-            <!-- Internship Projects -->
-            <div class="project-card">
-                <h3>Internship Projects</h3>
-                <div>
-                    <h4>Fashion E-commerce Optimization</h4>
-                    <p>Enhanced online sales performance by 20% through data-driven strategies for a fashion brand.</p>
+        <section id="education" class="mb-16 section-fade">
+            <h2 class="text-4xl font-bold mb-6 text-center">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-semibold mb-2">Master of Business Administration</h3>
+                    <p class="text-blue-600">New York Institute of Technology, New York City, NY</p>
+                    <p>Expected: December 2025</p>
+                    <p>GPA: 4.0 (Semester 1)</p>
                 </div>
-                <div>
-                    <h4>Sustainable Supply Chain Management</h4>
-                    <p>Implemented a blockchain-based system to improve transparency and ethical sourcing.</p>
-                </div>
-            </div>
-
-            <!-- Personal Projects -->
-            <!-- Personal Projects -->
-            <div class="project-card">
-                <h3>Personal Projects</h3>
-                <div>
-                    <h4>Smart Wardrobe System</h4>
-                    <p>Developed an IoT-based wardrobe management system for fashion enthusiasts, integrating RFID technology to track and recommend outfits.</p>
-                </div>
-                <div>
-                    <h4>Virtual Fashion Show</h4>
-                    <p>Organized a virtual fashion show to showcase emerging designers using a custom-built virtual reality platform.</p>
-                </div>
-            </div>
-
-            <!-- Research Paper -->
-            <div class="project-card">
-                <h3>Research Paper</h3>
-                <div>
-                    <h4>Impact of AI on Fashion Retail</h4>
-                    <p>Authored a research paper analyzing the influence of artificial intelligence on consumer behavior and inventory management in fashion retail.</p>
+                <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-semibold mb-2">Bachelor of Fashion Technology</h3>
+                    <p class="text-blue-600">National Institute of Fashion Technology, Kannur, India</p>
+                    <p>Graduated: May 2023</p>
+                    <p>Specialization: Apparel Production and Management</p>
                 </div>
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section id="education" class="section">
-            <h2>Education</h2>
-            <div class="project-card">
-                <h3>Master of Business Administration</h3>
-                <p>New York Institute of Technology | Jan 2024 - Dec 2025</p>
-                <p>Relevant Coursework: Supply Chain Management, Business Analytics, Financial Analysis, Marketing Management</p>
-            </div>
-            <div class="project-card">
-                <h3>Bachelor of Fashion Technology (Apparel Production)</h3>
-                <p>National Institute of Fashion Technology | Aug 2019 - May 2023</p>
-                <p>Relevant Coursework: Textile Science, Apparel Production, Fashion Marketing, Quality Control</p>
+        <section id="skills" class="mb-16 section-fade">
+            <h2 class="text-4xl font-bold mb-6 text-center">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600">Software & Technical</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Python, Tableau, Google Analytics</li>
+                        <li>Microsoft Office Suite</li>
+                        <li>AutoCAD, Adobe Photoshop, Illustrator</li>
+                        <li>HTML, Data Analysis</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600">Marketing & E-Commerce</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Digital Marketing Strategies</li>
+                        <li>SEO/SEM, Conversion Rate Optimization</li>
+                        <li>A/B Testing, UX Design</li>
+                        <li>Social Media Marketing</li>
+                        <li>Content Management Systems</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600">Fashion & Product Development</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Trend Analysis & Forecasting</li>
+                        <li>Textile Science & Production Technology</li>
+                        <li>Apparel Design & Construction</li>
+                        <li>Technical Specification Development</li>
+                        <li>Sustainability Integration in Fashion</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600">Supply Chain Management</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Demand Forecasting</li>
+                        <li>Inventory Management</li>
+                        <li>Logistics & Transportation Management</li>
+                        <li>Supplier Relationship Management</li>
+                        <li>Supply Chain Analytics</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600">Operations Management</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Lean Manufacturing Principles</li>
+                        <li>Six Sigma Methodologies</li>
+                        <li>Process Improvement & Optimization</li>
+                        <li>Quality Control & Assurance</li>
+                        <li>Production Planning & Scheduling</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600">Business & Leadership</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Project Management</li>
+                        <li>Financial Analysis & Modeling</li>
+                        <li>Strategic Planning</li>
+                        <li>Team Leadership & Collaboration</li>
+                        <li>Business Analytics & Decision Making</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <h2>Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class="project-card">Fashion Technology</div>
-                <div class="project-card">E-commerce Optimization</div>
-                <div class="project-card">Supply Chain Management</div>
-                <div class="project-card">Data Analytics</div>
-                <div class="project-card">Product Development</div>
-                <div class="project-card">Sustainable Fashion</div>
-                <div class="project-card">Lean Manufacturing</div>
-                <div class="project-card">Digital Marketing</div>
-                <div class="project-card">Project Management</div>
-                <div class="project-card">AI in Fashion</div>
-                <div class="project-card">Python</div>
-                <div class="project-card">Tableau</div>
+        <section id="experience" class="mb-16 section-fade">
+            <h2 class="text-4xl font-bold mb-6 text-center">Professional Experience</h2>
+            <div class="space-y-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Raymond Apparel Ltd. - Mumbai, India</h3>
+                    <p class="italic text-lg mb-2">E-Commerce, Digital Marketing, Merchandising, & Product Development Intern</p>
+                    <p class="mb-4">January 2023 - May 2023</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Spearheaded the launch of an athleisure wear range on Park Avenue's e-commerce platform</li>
+                        <li>Developed digital marketing strategies, resulting in a 20% increase in online conversions</li>
+                        <li>Optimized product listings for SEO and improved UX based on website metrics analysis</li>
+                        <li>Coordinated with vendors for material sourcing and developed cost-effective production strategies</li>
+                        <li>Reduced product development errors by 15% through improved process management</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Shahi Exports Pvt. Ltd - Mysore, India</h3>
+                    <p class="italic text-lg mb-2">Production Engineering & Operations Management Intern</p>
+                    <p class="mb-4">June 2022 - August 2022</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Implemented Value Stream Mapping for Cutting-Spreading and Sewing Departments</li>
+                        <li>Optimized workflows, resulting in a 12% reduction in cycle time and 15% improvement in operational efficiency</li>
+                        <li>Supervised a team of 200 workers and collaborated with quality inspection teams</li>
+                        <li>Applied lean manufacturing principles to streamline production processes</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-blue-600">Usha Yarns Pvt. Ltd - Chandigarh, India</h3>
+                    <p class="italic text-lg mb-2">Textile Intern</p>
+                    <p class="mb-4">August 2021 - September 2021</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Conducted analysis on the conversion of fabrics into recycled yarns</li>
+                        <li>Researched regenerate and melange yarns to identify supply chain efficiency improvements</li>
+                        <li>Recommended process enhancements that boosted processing efficiency by 10%</li>
+                        <li>Gained hands-on experience in sustainable textile production methods</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <form action="#" method="post">
-                <div class="project-card">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+        <section id="projects" class="mb-16 section-fade">
+            <h2 class="text-4xl font-bold mb-6 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Athleisure Wear Market Analysis</h3>
+                    <p class="italic mb-4">Tools: Excel, SPSS, Tableau, Google Analytics</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Conducted comprehensive market analysis for the athleisure segment</li>
+                        <li>Analyzed consumer preferences, competition, and growth opportunities</li>
+                        <li>Utilized advanced market research techniques and data analytics tools</li>
+                        <li>Presented findings to guide strategic decision-making in product development</li>
+                    </ul>
                 </div>
-                <div class="project-card">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Data-Driven Marketing Strategy for Athleisure Wear Line</h3>
+                    <p class="italic mb-4">Tools: Social Media Analytics, Tableau, Google Analytics, Python</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Developed a comprehensive marketing strategy for new athleisure wear line launch</li>
+                        <li>Conducted sentiment analysis and targeted segment analysis using Python</li>
+                        <li>Optimized marketing campaigns using data-driven insights</li>
+                        <li>Created a dashboard for real-time campaign performance monitoring</li>
+                    </ul>
                 </div>
-                <div class="project-card">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Lean Manufacturing Implementation in an Export House</h3>
+                    <p class="italic mb-4">Tools: Value Stream Mapping, 5S, and Gemba</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Developed a lean manufacturing strategy for an apparel production facility</li>
+                        <li>Identified process optimization opportunities and waste reduction areas</li>
+                        <li>Implemented 5S methodology to improve workplace organization</li>
+                        <li>Conducted Gemba walks to gain shop floor insights and drive continuous improvement</li>
+                    </ul>
                 </div>
-                <button type="submit" class="cta-button">Send Message</button>
-            </form>
+            </div>
+        </section>
+
+        <section id="personal-projects" class="mb-16 section-fade">
+            <h2 class="text-4xl font-bold mb-6 text-center">Personal Projects</h2>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold mb-4 text-blue-600">Project Documentation</h3>
+                <p class="mb-4">Upload and view documentation for your personal projects here:</p>
+                <input type="file" class="mb-4 p-2 border rounded" accept=".pdf,.doc,.docx">
+               <div id="project-list" class="space-y-4">
+                    <!-- Project items will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="volunteering" class="mb-16 section-fade">
+            <h2 class="text-4xl font-bold mb-6 text-center">Volunteering & Leadership</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Fashion Society President</h3>
+                    <p class="italic mb-4">National Institute of Fashion Technology, Kannur</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Led a team of 50+ members in organizing fashion shows and events</li>
+                        <li>Coordinated with industry professionals for workshops and seminars</li>
+                        <li>Managed budgets and sponsorships for various activities</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2 text-blue-600">Environmental Sustainability Ambassador</h3>
+                    <p class="italic mb-4">Local Community Initiative</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Organized awareness campaigns on sustainable fashion practices</li>
+                        <li>Conducted workshops on upcycling and eco-friendly textile production</li>
+                        <li>Collaborated with local artisans to promote traditional, sustainable techniques</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-16 section-fade">
+            <h2 class="text-4xl font-bold mb-6 text-center">Contact Me</h2>
+            <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <form id="contact-form" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">Send Message</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Aparna Ashtankar. All rights reserved.</p>
-        <div>
-            <a href="https://www.linkedin.com/in/aparna-ashtankar" target="_blank">LinkedIn</a>
-            <a href="https://github.com/aparna-ashtankar" target="_blank">GitHub</a>
-            <a href="https://twitter.com/aparna_ashtankar" target="_blank">Twitter</a>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Aparna Ranjan Ashtankar. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-white hover:text-blue-400 transition duration-300"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="#" class="text-white hover:text-blue-400 transition duration-300"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#" class="text-white hover:text-blue-400 transition duration-300"><i class="far fa-envelope fa-2x"></i></a>
+            </div>
         </div>
     </footer>
 
     <script>
-        document.getElementById('menu-icon').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('active');
+        // Intersection Observer for fade-in effect
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section-fade').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Project upload and display functionality
+        const fileInput = document.querySelector('input[type="file"]');
+        const projectList = document.getElementById('project-list');
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const projectItem = document.createElement('div');
+                projectItem.className = 'flex items-center justify-between bg-gray-100 p-4 rounded';
+                projectItem.innerHTML = `
+                    <span>${file.name}</span>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">View</button>
+                `;
+                projectList.appendChild(projectItem);
+            }
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            // Here you would typically send the form data to a server
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
-
 </html>
